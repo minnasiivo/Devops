@@ -2,6 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+// RUN TEST:
+//ng test --include=src/app/app.component.spec.ts
+
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -30,6 +33,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-example-app app is running!');
+    expect(compiled.querySelector('.toolbar span')?.textContent).toContain('Dev-ops-kurssin harjoitusprojekti');
   });
 });
