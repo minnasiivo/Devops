@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
 
 import { HomeComponent } from './home.component';
@@ -15,7 +15,7 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [HomeComponent],
       providers: [
-        { provide: Router, userValue: routerSpy }
+        { provide: Router, useValue: routerSpy }
       ]
     })
       .compileComponents();
@@ -25,13 +25,16 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Home-Component', () => {
     expect(component).toBeTruthy();
   });
 
   it('button navigate to feedback page', () => {
     component.showFeedbackPage();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['feedback']);
+    // component.showFeedbackPage();
+    //expect(routerSpy.navigate).toHaveBeenCalledWith(['feedback']);
   });
+
 
 });
