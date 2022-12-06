@@ -15,13 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { SubmitComponent } from './submit/submit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedbackComponent,
     HomeComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    SubmitComponent
   ],
   imports: [
     BrowserModule,

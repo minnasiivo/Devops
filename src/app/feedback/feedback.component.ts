@@ -19,8 +19,13 @@ export class FeedbackComponent implements OnInit {
     phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
     termsAndConditions: new FormControl('')
   });
+  publishName: any;
+  publishDescription: any;
+  PublishTitle: any;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+
+  }
 
   ngOnInit(): void {
   }
@@ -30,6 +35,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   onSubmit() {
+    this.router.navigate(['submit']);
     this.fbForm.reset();
     this.fbForm.controls['title'].setErrors(null);
     this.fbForm.controls['description'].setErrors(null);

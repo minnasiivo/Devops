@@ -63,4 +63,9 @@ describe('FeedbackComponent', () => {
     expect(cancelSpy.navigate).toHaveBeenCalledWith(['home']);
   })
 
+  it("Submit button navigates to submitpage", () => {
+    component.onSubmit();
+    expect(cancelSpy.navigate).toHaveBeenCalledWith(['submit']);
+  })
+
 });
