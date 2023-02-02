@@ -47,7 +47,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: node-app
-        path: public/
+        path: dist/angular-example-app
         
   build-docker-image:
     runs-on: ubuntu-latest
