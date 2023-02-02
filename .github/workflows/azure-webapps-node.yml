@@ -62,7 +62,7 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: ${{matrix.node-version}}
- #      -  uses: actions/download-artifact@master
+       -  uses: actions/download-artifact@master
   #        with:
    #         name: webpack artifacts
     #        path: public
