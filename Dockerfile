@@ -1,23 +1,28 @@
-FROM nginx:1.23.3
+#FROM nginx:1.23.3
 
 #COPY ./dist/angular-example-app /usr/share/nginx/html
-COPY /usr/src/app/dist/angular-example-app /usr/share/nginx/html
- COPY nginx.conf /etc/nginx/nginx.conf
 
- EXPOSE 80
- ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ #COPY nginx.conf /etc/nginx/nginx.conf
+
+ #EXPOSE 80
+ #ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 
+FROM trion/ng-cli as builder
+WORKDIR /app
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+RUN npm ci  --debug 
+COPY . .
+RUN ng build --prod
 
-#WORKDIR /usr/src/app
-#COPY package.json ./
-#RUN npm install
-#COPY . .
-#RUN npm run build
-# Stage 2: Run
-#FROM nginx:1.17.1-alpine
-# Copy compiled files from previous build stage
-#COPY --from=build /usr/src/app/dist/angular-tour-of-heroes /usr/share/nginx/html
+
+FROM nginx:1.17.5
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder  /app/dist/angular-example-app /usr/share/nginx/html 
+CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+
 
 
 
