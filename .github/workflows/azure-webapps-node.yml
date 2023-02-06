@@ -24,6 +24,8 @@ on:
 
 env:
   Azure_WEBAPP_NAME: devopsWebAppSiivo
+  #testausta:
+  AZURE_WEBAPP_PACKAGE_PATH: './dist/angulargithubaction'
   NODE_VERSION: '14.x'                # set this to the node version to use
 
 jobs:
