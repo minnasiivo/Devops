@@ -14,8 +14,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
  ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 
-FROM nginx:1.23.3
-
 
 
 
