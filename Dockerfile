@@ -1,7 +1,7 @@
 FROM nginx:1.23.3
 
 
-#WORKDIR /app
+WORKDIR /app
 #COPY . .
 COPY ./dist/angular-example-app /usr/share/nginx/html
 
