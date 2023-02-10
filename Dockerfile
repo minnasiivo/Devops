@@ -5,7 +5,7 @@ WORKDIR /app
 #COPY . .
 COPY ./dist/angular-example-app /usr/share/nginx/html
 
-RUN yarn install --production
+#RUN yarn install --production
 
 
 COPY nginx.conf /etc/nginx/nginx.conf
