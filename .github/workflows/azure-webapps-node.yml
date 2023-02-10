@@ -118,7 +118,7 @@ jobs:
     needs: build-docker-image
 
     environment:
-      name: 'Production'
+      name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
