@@ -1,5 +1,5 @@
-passphrase.txt
-logs/
-.git
-*.md
-.cache
+#passphrase.txt
+#logs/
+#.git
+#*.md
+#.cache
