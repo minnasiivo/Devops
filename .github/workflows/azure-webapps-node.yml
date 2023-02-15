@@ -126,10 +126,10 @@ jobs:
       - name: Lowercase the repo name
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
         
-      #- name: Download artifact from build job
-        #uses: actions/download-artifact@v3
-        #with:
-          #name: node-app
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
