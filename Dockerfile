@@ -14,8 +14,6 @@ EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 
-FROM nginx:1.23.3
-
 
 
 
