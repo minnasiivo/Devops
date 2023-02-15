@@ -87,7 +87,7 @@ jobs:
      - uses: actions/download-artifact@master
        with:
           name: node-app
-          path: /dist/angular-example-app
+          path: ./dist/angular-example-app
 
      - name: Set up Docker Buildx
        uses: docker/setup-buildx-action@v1
